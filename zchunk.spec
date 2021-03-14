@@ -6,7 +6,7 @@ Summary:	Library for generating easy-to-delta files
 Summary(pl.UTF-8):	Biblioteka do generowania plików pozwalających na łatwe generowanie różnic
 Name:		zchunk
 Version:	1.1.9
-Release:	1
+Release:	2
 License:	BSD
 Group:		Applications/File
 #Source0Download: https://github.com/zchunk/zchunk/releases
