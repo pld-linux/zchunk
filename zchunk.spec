@@ -5,13 +5,13 @@
 Summary:	Library for generating easy-to-delta files
 Summary(pl.UTF-8):	Biblioteka do generowania plików pozwalających na łatwe generowanie różnic
 Name:		zchunk
-Version:	1.1.9
-Release:	2
+Version:	1.1.16
+Release:	1
 License:	BSD
 Group:		Applications/File
 #Source0Download: https://github.com/zchunk/zchunk/releases
 Source0:	https://github.com/zchunk/zchunk/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	b75c16c9393434dff27a497390cc82a0
+# Source0-md5:	aea55d19670231286e5f6fe23f6751df
 URL:		https://github.com/zchunk/zchunk
 BuildRequires:	curl-devel
 BuildRequires:	gcc >= 5:3.2
@@ -20,7 +20,7 @@ BuildRequires:	ninja >= 1.5
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
-BuildRequires:	zstd-devel
+BuildRequires:	zstd-devel >= 1.5.0
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,6 +45,7 @@ weryfikacji, czy pobrany plik jest faktycznie tym, którym miał być.
 Summary:	Shared zck library
 Summary(pl.UTF-8):	Biblioteka współdzielona zck
 Group:		Libraries
+Requires:	zstd >= 1.5.0
 
 %description libs
 zchunk is a compressed file format that splits the file into
@@ -73,7 +74,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki zck
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	openssl-devel
-Requires:	zstd-devel
+Requires:	zstd-devel >= 1.5.0
 
 %description devel
 Header files for zck library.
