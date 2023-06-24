@@ -5,13 +5,13 @@
 Summary:	Library for generating easy-to-delta files
 Summary(pl.UTF-8):	Biblioteka do generowania plików pozwalających na łatwe generowanie różnic
 Name:		zchunk
-Version:	1.3.0
+Version:	1.3.1
 Release:	1
 License:	BSD
 Group:		Applications/File
 #Source0Download: https://github.com/zchunk/zchunk/tags
 Source0:	https://github.com/zchunk/zchunk/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	dbd2bd76d346854081b4fd471eb340dd
+# Source0-md5:	fd3d96ddfcdb4f3de377fc6d13121536
 URL:		https://github.com/zchunk/zchunk
 BuildRequires:	curl-devel
 BuildRequires:	gcc >= 5:3.2
