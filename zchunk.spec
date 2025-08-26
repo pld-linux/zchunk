@@ -19,7 +19,7 @@ BuildRequires:	meson >= 0.53.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	zstd-devel >= 1.5.0
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
