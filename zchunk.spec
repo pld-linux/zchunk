@@ -5,17 +5,17 @@
 Summary:	Library for generating easy-to-delta files
 Summary(pl.UTF-8):	Biblioteka do generowania plików pozwalających na łatwe generowanie różnic
 Name:		zchunk
-Version:	1.5.2
+Version:	1.5.4
 Release:	1
 License:	BSD
 Group:		Applications/File
 #Source0Download: https://github.com/zchunk/zchunk/tags
 Source0:	https://github.com/zchunk/zchunk/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	80616569b639fa6007fd11d44d2ad492
+# Source0-md5:	aaeeaaa47e5c897c8cd3c13b94cc4eb8
 URL:		https://github.com/zchunk/zchunk
 BuildRequires:	curl-devel
-BuildRequires:	gcc >= 5:3.2
-BuildRequires:	meson >= 0.53.0
+BuildRequires:	gcc >= 6:4.7
+BuildRequires:	meson >= 0.54.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
@@ -99,7 +99,10 @@ Statyczna biblioteka zck.
 
 %build
 %meson \
-	%{!?with_static_libs:--default-library=shared}
+	%{!?with_static_libs:--default-library=shared} \
+	-Dwith-curl=enabled \
+	-Dwith-openssl=enabled \
+	-Dwith-zstd=enabled
 
 %meson_build
 
@@ -133,13 +136,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libzck.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libzck.so.1
+%{_libdir}/libzck.so.*.*.*
+%ghost %{_libdir}/libzck.so.1
 
 %files devel
 %defattr(644,root,root,755)
 %doc zchunk_format.txt
-%attr(755,root,root) %{_libdir}/libzck.so
+%{_libdir}/libzck.so
 %{_includedir}/zck.h
 %{_pkgconfigdir}/zck.pc
 
